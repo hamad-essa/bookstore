@@ -226,7 +226,7 @@
 					]
 				},
 				"url": {
-					"raw": "{{endpoint}}/api/v1/books/1",
+					"raw": "{{endpoint}}/api/v1/books",
 					"host": [
 						"{{endpoint}}"
 					],
