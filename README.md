@@ -49,7 +49,7 @@ Follow these steps to set up the project on your local machine:
    php artisan migrate --seed
    ```
 
-6. **Link Storge directory to Public:**
+6. **Link Storage directory to Public:**
 
    ```bash
    php artisan storage:link
