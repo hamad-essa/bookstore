@@ -17,17 +17,12 @@ class AuthorApiController extends Controller
 
     public function index()
     {
-        abort_if(Gate::denies('author_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
-
         return new AuthorResource(Author::all());
     }
 
 
     public function booksByAuthor(Author $author)
     {
-        abort_if(Gate::denies('book_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
-        abort_if(Gate::denies('author_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
-
         return new BookResource(Book::where('author_id',$author->id)->get());
     }
 }

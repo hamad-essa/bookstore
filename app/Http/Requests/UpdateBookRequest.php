@@ -11,7 +11,7 @@ class UpdateBookRequest extends FormRequest
 {
     public function authorize()
     {
-        return Gate::allows('book_edit');
+        return true;
     }
 
     public function rules()

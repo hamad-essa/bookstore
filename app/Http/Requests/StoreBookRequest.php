@@ -11,7 +11,7 @@ class StoreBookRequest extends FormRequest
 {
     public function authorize()
     {
-        return Gate::allows('book_create');
+        return true;
     }
 
     public function rules()

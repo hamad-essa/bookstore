@@ -19,15 +19,11 @@ class BookApiController extends Controller
 
     public function index()
     {
-        abort_if(Gate::denies('book_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
-
         return new BookResource(Book::all());
     }
 
     public function bookByISBN($isbn)
     {
-        abort_if(Gate::denies('book_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
-
         return new BookResource(Book::where('isbn',$isbn)->get());
     }
 
@@ -46,8 +42,6 @@ class BookApiController extends Controller
 
     public function show(Book $book)
     {
-        abort_if(Gate::denies('book_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
-
         return new BookResource($book);
     }
 
@@ -73,8 +67,6 @@ class BookApiController extends Controller
 
     public function destroy(Book $book)
     {
-        abort_if(Gate::denies('book_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
-
         $book->delete();
 
         return response(null, Response::HTTP_NO_CONTENT);
